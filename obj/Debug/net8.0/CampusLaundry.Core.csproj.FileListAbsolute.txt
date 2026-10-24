@@ -12,3 +12,4 @@ c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLau
 c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.exe
 c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.runtimeconfig.json
 c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.genruntimeconfig.cache
+C:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.sourcelink.json

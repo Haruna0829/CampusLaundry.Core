@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CampusLaundry.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63e78d54d1954d45ed4ce9cdbd1eec1284df4014")]
 [assembly: System.Reflection.AssemblyProductAttribute("CampusLaundry.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CampusLaundry.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
