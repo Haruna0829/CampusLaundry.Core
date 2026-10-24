@@ -1,0 +1,14 @@
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.deps.json
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.dll
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.pdb
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.AssemblyInfoInputs.cache
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.AssemblyInfo.cs
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.csproj.CoreCompileInputs.cache
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.dll
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\refint\CampusLaundry.Core.dll
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.pdb
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\ref\CampusLaundry.Core.dll
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.exe
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\bin\Debug\net8.0\CampusLaundry.Core.runtimeconfig.json
+c:\Users\keanu\OneDrive\1st 3rd\OOP\Assignment\CampusLaundryAssignment\CampusLaundry.Core\obj\Debug\net8.0\CampusLaundry.Core.genruntimeconfig.cache
