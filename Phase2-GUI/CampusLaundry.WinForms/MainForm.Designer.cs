@@ -16,12 +16,6 @@ namespace CampusLaundry.WinForms
             headingLabel = new Label();
             summary = new Label();
             mainTabs = new TabControl();
-            studentsPage = new TabPage();
-            studentsHelp = new Label();
-            studentsGrid = new DataGridView();
-            studentsGridColumn0 = new DataGridViewTextBoxColumn();
-            studentsGridColumn1 = new DataGridViewTextBoxColumn();
-            studentsGridColumn2 = new DataGridViewTextBoxColumn();
             bookingsPage = new TabPage();
             bookingsHelp = new Label();
             studentBox = new ComboBox();
@@ -38,16 +32,6 @@ namespace CampusLaundry.WinForms
             bookingsGridColumn5 = new DataGridViewTextBoxColumn();
             bookingsGridColumn6 = new DataGridViewTextBoxColumn();
             bookingsGridColumn7 = new DataGridViewTextBoxColumn();
-            paymentsPage = new TabPage();
-            paymentsHelp = new Label();
-            receiptButton = new Button();
-            paymentsGrid = new DataGridView();
-            paymentsGridColumn0 = new DataGridViewTextBoxColumn();
-            paymentsGridColumn1 = new DataGridViewTextBoxColumn();
-            paymentsGridColumn2 = new DataGridViewTextBoxColumn();
-            paymentsGridColumn3 = new DataGridViewTextBoxColumn();
-            paymentsGridColumn4 = new DataGridViewTextBoxColumn();
-            paymentsGridColumn5 = new DataGridViewTextBoxColumn();
             maintenancePage = new TabPage();
             faultLabel = new Label();
             issueBox = new TextBox();
@@ -71,6 +55,22 @@ namespace CampusLaundry.WinForms
             ticketsGridColumn3 = new DataGridViewTextBoxColumn();
             ticketsGridColumn4 = new DataGridViewTextBoxColumn();
             ticketsGridColumn5 = new DataGridViewTextBoxColumn();
+            studentsPage = new TabPage();
+            studentsHelp = new Label();
+            studentsGrid = new DataGridView();
+            studentsGridColumn0 = new DataGridViewTextBoxColumn();
+            studentsGridColumn1 = new DataGridViewTextBoxColumn();
+            studentsGridColumn2 = new DataGridViewTextBoxColumn();
+            paymentsPage = new TabPage();
+            paymentsHelp = new Label();
+            receiptButton = new Button();
+            paymentsGrid = new DataGridView();
+            paymentsGridColumn0 = new DataGridViewTextBoxColumn();
+            paymentsGridColumn1 = new DataGridViewTextBoxColumn();
+            paymentsGridColumn2 = new DataGridViewTextBoxColumn();
+            paymentsGridColumn3 = new DataGridViewTextBoxColumn();
+            paymentsGridColumn4 = new DataGridViewTextBoxColumn();
+            paymentsGridColumn5 = new DataGridViewTextBoxColumn();
             notificationsPage = new TabPage();
             notificationsHelp = new Label();
             messages = new ListBox();
@@ -79,22 +79,22 @@ namespace CampusLaundry.WinForms
             sessionLabel = new Label();
             backHomeButton = new Button();
             mainTabs.SuspendLayout();
-            studentsPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)studentsGrid).BeginInit();
             bookingsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bookingsGrid).BeginInit();
-            paymentsPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)paymentsGrid).BeginInit();
             maintenancePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)machinesGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ticketsGrid).BeginInit();
+            studentsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)studentsGrid).BeginInit();
+            paymentsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)paymentsGrid).BeginInit();
             notificationsPage.SuspendLayout();
             SuspendLayout();
             // 
             // headingLabel
             // 
             headingLabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
-            headingLabel.ForeColor = Color.FromArgb(28, 66, 90);
+            headingLabel.ForeColor = Color.Black;
             headingLabel.Location = new Point(20, 15);
             headingLabel.Name = "headingLabel";
             headingLabel.Size = new Size(600, 44);
@@ -103,86 +103,32 @@ namespace CampusLaundry.WinForms
             // 
             // summary
             // 
+            summary.BackColor = Color.Transparent;
+            summary.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            summary.ForeColor = SystemColors.ActiveCaptionText;
             summary.Location = new Point(20, 65);
             summary.Name = "summary";
-            summary.Size = new Size(1120, 30);
+            summary.Size = new Size(1088, 30);
             summary.TabIndex = 1;
             summary.Text = "Room 1 | Available: 3 | Reserved: 0 | Washing: 0 | Waiting: 0";
             // 
             // mainTabs
             // 
             mainTabs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainTabs.Controls.Add(studentsPage);
             mainTabs.Controls.Add(bookingsPage);
-            mainTabs.Controls.Add(paymentsPage);
             mainTabs.Controls.Add(maintenancePage);
+            mainTabs.Controls.Add(studentsPage);
+            mainTabs.Controls.Add(paymentsPage);
             mainTabs.Controls.Add(notificationsPage);
-            mainTabs.Location = new Point(20, 105);
+            mainTabs.DrawMode = TabDrawMode.OwnerDrawFixed;
+            mainTabs.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mainTabs.ItemSize = new Size(150, 34);
+            mainTabs.Location = new Point(20, 98);
             mainTabs.Name = "mainTabs";
             mainTabs.SelectedIndex = 0;
             mainTabs.Size = new Size(1140, 565);
             mainTabs.TabIndex = 2;
-            // 
-            // studentsPage
-            // 
-            studentsPage.Controls.Add(studentsHelp);
-            studentsPage.Controls.Add(studentsGrid);
-            studentsPage.Location = new Point(4, 26);
-            studentsPage.Name = "studentsPage";
-            studentsPage.Size = new Size(1132, 535);
-            studentsPage.TabIndex = 0;
-            studentsPage.Text = "1. Students";
-            studentsPage.UseVisualStyleBackColor = true;
-            // 
-            // studentsHelp
-            // 
-            studentsHelp.Location = new Point(16, 16);
-            studentsHelp.Name = "studentsHelp";
-            studentsHelp.Size = new Size(1080, 26);
-            studentsHelp.TabIndex = 0;
-            studentsHelp.Text = "Add students here. Each student can have one active booking.";
-            // 
-            // studentsGrid
-            // 
-            studentsGrid.AllowUserToAddRows = false;
-            studentsGrid.AllowUserToDeleteRows = false;
-            studentsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            studentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            studentsGrid.BackgroundColor = Color.White;
-            studentsGrid.Columns.AddRange(new DataGridViewColumn[] { studentsGridColumn0, studentsGridColumn1, studentsGridColumn2 });
-            studentsGrid.Location = new Point(16, 65);
-            studentsGrid.MultiSelect = false;
-            studentsGrid.Name = "studentsGrid";
-            studentsGrid.ReadOnly = true;
-            studentsGrid.RowHeadersVisible = false;
-            studentsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            studentsGrid.Size = new Size(1090, 445);
-            studentsGrid.TabIndex = 8;
-            studentsGrid.CellContentClick += studentsGrid_CellContentClick;
-            // 
-            // studentsGridColumn0
-            // 
-            studentsGridColumn0.HeaderText = "ID";
-            studentsGridColumn0.MinimumWidth = 70;
-            studentsGridColumn0.Name = "studentsGridColumn0";
-            studentsGridColumn0.ReadOnly = true;
-            studentsGridColumn0.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // studentsGridColumn1
-            // 
-            studentsGridColumn1.HeaderText = "Student name";
-            studentsGridColumn1.MinimumWidth = 70;
-            studentsGridColumn1.Name = "studentsGridColumn1";
-            studentsGridColumn1.ReadOnly = true;
-            studentsGridColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // studentsGridColumn2
-            // 
-            studentsGridColumn2.HeaderText = "Phone";
-            studentsGridColumn2.MinimumWidth = 70;
-            studentsGridColumn2.Name = "studentsGridColumn2";
-            studentsGridColumn2.ReadOnly = true;
-            studentsGridColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            mainTabs.DrawItem += mainTabs_DrawItem;
             // 
             // bookingsPage
             // 
@@ -193,11 +139,11 @@ namespace CampusLaundry.WinForms
             bookingsPage.Controls.Add(startButton);
             bookingsPage.Controls.Add(cancelButton);
             bookingsPage.Controls.Add(bookingsGrid);
-            bookingsPage.Location = new Point(4, 24);
+            bookingsPage.Location = new Point(4, 38);
             bookingsPage.Name = "bookingsPage";
-            bookingsPage.Size = new Size(1132, 537);
+            bookingsPage.Size = new Size(1132, 523);
             bookingsPage.TabIndex = 1;
-            bookingsPage.Text = "2. Bookings & queue";
+            bookingsPage.Text = "Bookings & queue";
             bookingsPage.UseVisualStyleBackColor = true;
             // 
             // bookingsHelp
@@ -213,47 +159,63 @@ namespace CampusLaundry.WinForms
             studentBox.DropDownStyle = ComboBoxStyle.DropDownList;
             studentBox.Location = new Point(16, 65);
             studentBox.Name = "studentBox";
-            studentBox.Size = new Size(280, 25);
+            studentBox.Size = new Size(280, 31);
             studentBox.TabIndex = 1;
             // 
             // joinButton
             // 
+            joinButton.BackColor = Color.FromArgb(40, 122, 208);
+            joinButton.FlatStyle = FlatStyle.Flat;
+            joinButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            joinButton.ForeColor = Color.White;
             joinButton.Location = new Point(315, 61);
             joinButton.Name = "joinButton";
             joinButton.Size = new Size(140, 36);
             joinButton.TabIndex = 2;
             joinButton.Text = "Join queue";
-            joinButton.UseVisualStyleBackColor = true;
+            joinButton.UseVisualStyleBackColor = false;
             joinButton.Click += JoinClick;
             // 
             // payButton
             // 
+            payButton.BackColor = Color.FromArgb(40, 122, 208);
+            payButton.FlatStyle = FlatStyle.Flat;
+            payButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            payButton.ForeColor = Color.White;
             payButton.Location = new Point(470, 61);
             payButton.Name = "payButton";
             payButton.Size = new Size(110, 36);
             payButton.TabIndex = 3;
             payButton.Text = "Pay";
-            payButton.UseVisualStyleBackColor = true;
+            payButton.UseVisualStyleBackColor = false;
             payButton.Click += PayClick;
             // 
             // startButton
             // 
+            startButton.BackColor = Color.FromArgb(40, 122, 208);
+            startButton.FlatStyle = FlatStyle.Flat;
+            startButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            startButton.ForeColor = Color.White;
             startButton.Location = new Point(595, 61);
             startButton.Name = "startButton";
             startButton.Size = new Size(140, 36);
             startButton.TabIndex = 4;
             startButton.Text = "Start wash";
-            startButton.UseVisualStyleBackColor = true;
+            startButton.UseVisualStyleBackColor = false;
             startButton.Click += StartClick;
             // 
             // cancelButton
             // 
+            cancelButton.BackColor = Color.FromArgb(40, 122, 208);
+            cancelButton.FlatStyle = FlatStyle.Flat;
+            cancelButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelButton.ForeColor = Color.White;
             cancelButton.Location = new Point(750, 61);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(160, 36);
             cancelButton.TabIndex = 5;
             cancelButton.Text = "Cancel booking";
-            cancelButton.UseVisualStyleBackColor = true;
+            cancelButton.UseVisualStyleBackColor = false;
             cancelButton.Click += CancelClick;
             // 
             // bookingsGrid
@@ -263,14 +225,16 @@ namespace CampusLaundry.WinForms
             bookingsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             bookingsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             bookingsGrid.BackgroundColor = Color.White;
+            bookingsGrid.ColumnHeadersHeight = 29;
             bookingsGrid.Columns.AddRange(new DataGridViewColumn[] { bookingsGridColumn0, bookingsGridColumn1, bookingsGridColumn2, bookingsGridColumn3, bookingsGridColumn4, bookingsGridColumn5, bookingsGridColumn6, bookingsGridColumn7 });
             bookingsGrid.Location = new Point(16, 120);
             bookingsGrid.MultiSelect = false;
             bookingsGrid.Name = "bookingsGrid";
             bookingsGrid.ReadOnly = true;
             bookingsGrid.RowHeadersVisible = false;
+            bookingsGrid.RowHeadersWidth = 51;
             bookingsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            bookingsGrid.Size = new Size(1090, 388);
+            bookingsGrid.Size = new Size(1090, 373);
             bookingsGrid.TabIndex = 6;
             bookingsGrid.SelectionChanged += SelectionChanged;
             // 
@@ -338,102 +302,6 @@ namespace CampusLaundry.WinForms
             bookingsGridColumn7.ReadOnly = true;
             bookingsGridColumn7.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // paymentsPage
-            // 
-            paymentsPage.Controls.Add(paymentsHelp);
-            paymentsPage.Controls.Add(receiptButton);
-            paymentsPage.Controls.Add(paymentsGrid);
-            paymentsPage.Location = new Point(4, 24);
-            paymentsPage.Name = "paymentsPage";
-            paymentsPage.Size = new Size(1132, 537);
-            paymentsPage.TabIndex = 2;
-            paymentsPage.Text = "3. Payments & receipts";
-            paymentsPage.UseVisualStyleBackColor = true;
-            // 
-            // paymentsHelp
-            // 
-            paymentsHelp.Location = new Point(16, 16);
-            paymentsHelp.Name = "paymentsHelp";
-            paymentsHelp.Size = new Size(1090, 26);
-            paymentsHelp.TabIndex = 0;
-            paymentsHelp.Text = "Choose a paid transaction to view its receipt. No real money is charged.";
-            // 
-            // receiptButton
-            // 
-            receiptButton.Location = new Point(16, 58);
-            receiptButton.Name = "receiptButton";
-            receiptButton.Size = new Size(160, 36);
-            receiptButton.TabIndex = 1;
-            receiptButton.Text = "View receipt";
-            receiptButton.UseVisualStyleBackColor = true;
-            receiptButton.Click += ReceiptClick;
-            // 
-            // paymentsGrid
-            // 
-            paymentsGrid.AllowUserToAddRows = false;
-            paymentsGrid.AllowUserToDeleteRows = false;
-            paymentsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            paymentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            paymentsGrid.BackgroundColor = Color.White;
-            paymentsGrid.Columns.AddRange(new DataGridViewColumn[] { paymentsGridColumn0, paymentsGridColumn1, paymentsGridColumn2, paymentsGridColumn3, paymentsGridColumn4, paymentsGridColumn5 });
-            paymentsGrid.Location = new Point(16, 120);
-            paymentsGrid.MultiSelect = false;
-            paymentsGrid.Name = "paymentsGrid";
-            paymentsGrid.ReadOnly = true;
-            paymentsGrid.RowHeadersVisible = false;
-            paymentsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            paymentsGrid.Size = new Size(1090, 388);
-            paymentsGrid.TabIndex = 2;
-            paymentsGrid.SelectionChanged += SelectionChanged;
-            // 
-            // paymentsGridColumn0
-            // 
-            paymentsGridColumn0.HeaderText = "Payment";
-            paymentsGridColumn0.MinimumWidth = 70;
-            paymentsGridColumn0.Name = "paymentsGridColumn0";
-            paymentsGridColumn0.ReadOnly = true;
-            paymentsGridColumn0.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentsGridColumn1
-            // 
-            paymentsGridColumn1.HeaderText = "Booking";
-            paymentsGridColumn1.MinimumWidth = 70;
-            paymentsGridColumn1.Name = "paymentsGridColumn1";
-            paymentsGridColumn1.ReadOnly = true;
-            paymentsGridColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentsGridColumn2
-            // 
-            paymentsGridColumn2.HeaderText = "Amount (RM)";
-            paymentsGridColumn2.MinimumWidth = 70;
-            paymentsGridColumn2.Name = "paymentsGridColumn2";
-            paymentsGridColumn2.ReadOnly = true;
-            paymentsGridColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentsGridColumn3
-            // 
-            paymentsGridColumn3.HeaderText = "Method";
-            paymentsGridColumn3.MinimumWidth = 70;
-            paymentsGridColumn3.Name = "paymentsGridColumn3";
-            paymentsGridColumn3.ReadOnly = true;
-            paymentsGridColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentsGridColumn4
-            // 
-            paymentsGridColumn4.HeaderText = "Status";
-            paymentsGridColumn4.MinimumWidth = 70;
-            paymentsGridColumn4.Name = "paymentsGridColumn4";
-            paymentsGridColumn4.ReadOnly = true;
-            paymentsGridColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentsGridColumn5
-            // 
-            paymentsGridColumn5.HeaderText = "Paid at";
-            paymentsGridColumn5.MinimumWidth = 70;
-            paymentsGridColumn5.Name = "paymentsGridColumn5";
-            paymentsGridColumn5.ReadOnly = true;
-            paymentsGridColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
             // maintenancePage
             // 
             maintenancePage.Controls.Add(faultLabel);
@@ -448,11 +316,11 @@ namespace CampusLaundry.WinForms
             maintenancePage.Controls.Add(notesBox);
             maintenancePage.Controls.Add(resolveButton);
             maintenancePage.Controls.Add(ticketsGrid);
-            maintenancePage.Location = new Point(4, 24);
+            maintenancePage.Location = new Point(4, 38);
             maintenancePage.Name = "maintenancePage";
-            maintenancePage.Size = new Size(1132, 537);
+            maintenancePage.Size = new Size(1132, 523);
             maintenancePage.TabIndex = 3;
-            maintenancePage.Text = "4. Machines & maintenance";
+            maintenancePage.Text = "Machines";
             maintenancePage.UseVisualStyleBackColor = true;
             // 
             // faultLabel
@@ -468,7 +336,7 @@ namespace CampusLaundry.WinForms
             issueBox.Location = new Point(155, 12);
             issueBox.MaxLength = 200;
             issueBox.Name = "issueBox";
-            issueBox.Size = new Size(380, 25);
+            issueBox.Size = new Size(380, 30);
             issueBox.TabIndex = 1;
             // 
             // reportButton
@@ -496,12 +364,14 @@ namespace CampusLaundry.WinForms
             machinesGrid.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             machinesGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             machinesGrid.BackgroundColor = Color.White;
+            machinesGrid.ColumnHeadersHeight = 29;
             machinesGrid.Columns.AddRange(new DataGridViewColumn[] { machinesGridColumn0, machinesGridColumn1, machinesGridColumn2, machinesGridColumn3 });
             machinesGrid.Location = new Point(16, 62);
             machinesGrid.MultiSelect = false;
             machinesGrid.Name = "machinesGrid";
             machinesGrid.ReadOnly = true;
             machinesGrid.RowHeadersVisible = false;
+            machinesGrid.RowHeadersWidth = 51;
             machinesGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             machinesGrid.Size = new Size(1090, 170);
             machinesGrid.TabIndex = 4;
@@ -544,7 +414,7 @@ namespace CampusLaundry.WinForms
             technicianBox.DropDownStyle = ComboBoxStyle.DropDownList;
             technicianBox.Location = new Point(16, 255);
             technicianBox.Name = "technicianBox";
-            technicianBox.Size = new Size(210, 25);
+            technicianBox.Size = new Size(210, 31);
             technicianBox.TabIndex = 5;
             technicianBox.SelectedIndexChanged += SelectionChanged;
             // 
@@ -581,7 +451,7 @@ namespace CampusLaundry.WinForms
             notesBox.Location = new Point(680, 255);
             notesBox.MaxLength = 200;
             notesBox.Name = "notesBox";
-            notesBox.Size = new Size(250, 25);
+            notesBox.Size = new Size(250, 30);
             notesBox.TabIndex = 9;
             // 
             // resolveButton
@@ -601,14 +471,16 @@ namespace CampusLaundry.WinForms
             ticketsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ticketsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ticketsGrid.BackgroundColor = Color.White;
+            ticketsGrid.ColumnHeadersHeight = 29;
             ticketsGrid.Columns.AddRange(new DataGridViewColumn[] { ticketsGridColumn0, ticketsGridColumn1, ticketsGridColumn2, ticketsGridColumn3, ticketsGridColumn4, ticketsGridColumn5 });
             ticketsGrid.Location = new Point(16, 310);
             ticketsGrid.MultiSelect = false;
             ticketsGrid.Name = "ticketsGrid";
             ticketsGrid.ReadOnly = true;
             ticketsGrid.RowHeadersVisible = false;
+            ticketsGrid.RowHeadersWidth = 51;
             ticketsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ticketsGrid.Size = new Size(1090, 198);
+            ticketsGrid.Size = new Size(1090, 189);
             ticketsGrid.TabIndex = 11;
             ticketsGrid.SelectionChanged += SelectionChanged;
             // 
@@ -660,15 +532,176 @@ namespace CampusLaundry.WinForms
             ticketsGridColumn5.ReadOnly = true;
             ticketsGridColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
+            // studentsPage
+            // 
+            studentsPage.Controls.Add(studentsHelp);
+            studentsPage.Controls.Add(studentsGrid);
+            studentsPage.Location = new Point(4, 38);
+            studentsPage.Name = "studentsPage";
+            studentsPage.Size = new Size(1132, 523);
+            studentsPage.TabIndex = 0;
+            studentsPage.Text = "Students";
+            studentsPage.UseVisualStyleBackColor = true;
+            // 
+            // studentsHelp
+            // 
+            studentsHelp.Location = new Point(16, 16);
+            studentsHelp.Name = "studentsHelp";
+            studentsHelp.Size = new Size(1080, 26);
+            studentsHelp.TabIndex = 0;
+            studentsHelp.Text = "Add students here. Each student can have one active booking.";
+            // 
+            // studentsGrid
+            // 
+            studentsGrid.AllowUserToAddRows = false;
+            studentsGrid.AllowUserToDeleteRows = false;
+            studentsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            studentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            studentsGrid.BackgroundColor = Color.White;
+            studentsGrid.ColumnHeadersHeight = 29;
+            studentsGrid.Columns.AddRange(new DataGridViewColumn[] { studentsGridColumn0, studentsGridColumn1, studentsGridColumn2 });
+            studentsGrid.Location = new Point(16, 59);
+            studentsGrid.MultiSelect = false;
+            studentsGrid.Name = "studentsGrid";
+            studentsGrid.ReadOnly = true;
+            studentsGrid.RowHeadersVisible = false;
+            studentsGrid.RowHeadersWidth = 51;
+            studentsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            studentsGrid.Size = new Size(1090, 447);
+            studentsGrid.TabIndex = 8;
+            studentsGrid.CellContentClick += studentsGrid_CellContentClick;
+            // 
+            // studentsGridColumn0
+            // 
+            studentsGridColumn0.HeaderText = "ID";
+            studentsGridColumn0.MinimumWidth = 70;
+            studentsGridColumn0.Name = "studentsGridColumn0";
+            studentsGridColumn0.ReadOnly = true;
+            studentsGridColumn0.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // studentsGridColumn1
+            // 
+            studentsGridColumn1.HeaderText = "Student name";
+            studentsGridColumn1.MinimumWidth = 70;
+            studentsGridColumn1.Name = "studentsGridColumn1";
+            studentsGridColumn1.ReadOnly = true;
+            studentsGridColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // studentsGridColumn2
+            // 
+            studentsGridColumn2.HeaderText = "Phone";
+            studentsGridColumn2.MinimumWidth = 70;
+            studentsGridColumn2.Name = "studentsGridColumn2";
+            studentsGridColumn2.ReadOnly = true;
+            studentsGridColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsPage
+            // 
+            paymentsPage.Controls.Add(paymentsHelp);
+            paymentsPage.Controls.Add(receiptButton);
+            paymentsPage.Controls.Add(paymentsGrid);
+            paymentsPage.Location = new Point(4, 38);
+            paymentsPage.Name = "paymentsPage";
+            paymentsPage.Size = new Size(1132, 523);
+            paymentsPage.TabIndex = 2;
+            paymentsPage.Text = "Payments & receipts";
+            paymentsPage.UseVisualStyleBackColor = true;
+            // 
+            // paymentsHelp
+            // 
+            paymentsHelp.Location = new Point(16, 16);
+            paymentsHelp.Name = "paymentsHelp";
+            paymentsHelp.Size = new Size(1090, 26);
+            paymentsHelp.TabIndex = 0;
+            paymentsHelp.Text = "Choose a paid transaction to view its receipt. No real money is charged.";
+            // 
+            // receiptButton
+            // 
+            receiptButton.Location = new Point(16, 58);
+            receiptButton.Name = "receiptButton";
+            receiptButton.Size = new Size(160, 36);
+            receiptButton.TabIndex = 1;
+            receiptButton.Text = "View receipt";
+            receiptButton.UseVisualStyleBackColor = true;
+            receiptButton.Click += ReceiptClick;
+            // 
+            // paymentsGrid
+            // 
+            paymentsGrid.AllowUserToAddRows = false;
+            paymentsGrid.AllowUserToDeleteRows = false;
+            paymentsGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            paymentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            paymentsGrid.BackgroundColor = Color.White;
+            paymentsGrid.ColumnHeadersHeight = 29;
+            paymentsGrid.Columns.AddRange(new DataGridViewColumn[] { paymentsGridColumn0, paymentsGridColumn1, paymentsGridColumn2, paymentsGridColumn3, paymentsGridColumn4, paymentsGridColumn5 });
+            paymentsGrid.Location = new Point(16, 120);
+            paymentsGrid.MultiSelect = false;
+            paymentsGrid.Name = "paymentsGrid";
+            paymentsGrid.ReadOnly = true;
+            paymentsGrid.RowHeadersVisible = false;
+            paymentsGrid.RowHeadersWidth = 51;
+            paymentsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            paymentsGrid.Size = new Size(1090, 373);
+            paymentsGrid.TabIndex = 2;
+            paymentsGrid.SelectionChanged += SelectionChanged;
+            // 
+            // paymentsGridColumn0
+            // 
+            paymentsGridColumn0.HeaderText = "Payment";
+            paymentsGridColumn0.MinimumWidth = 70;
+            paymentsGridColumn0.Name = "paymentsGridColumn0";
+            paymentsGridColumn0.ReadOnly = true;
+            paymentsGridColumn0.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsGridColumn1
+            // 
+            paymentsGridColumn1.HeaderText = "Booking";
+            paymentsGridColumn1.MinimumWidth = 70;
+            paymentsGridColumn1.Name = "paymentsGridColumn1";
+            paymentsGridColumn1.ReadOnly = true;
+            paymentsGridColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsGridColumn2
+            // 
+            paymentsGridColumn2.HeaderText = "Amount (RM)";
+            paymentsGridColumn2.MinimumWidth = 70;
+            paymentsGridColumn2.Name = "paymentsGridColumn2";
+            paymentsGridColumn2.ReadOnly = true;
+            paymentsGridColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsGridColumn3
+            // 
+            paymentsGridColumn3.HeaderText = "Method";
+            paymentsGridColumn3.MinimumWidth = 70;
+            paymentsGridColumn3.Name = "paymentsGridColumn3";
+            paymentsGridColumn3.ReadOnly = true;
+            paymentsGridColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsGridColumn4
+            // 
+            paymentsGridColumn4.HeaderText = "Status";
+            paymentsGridColumn4.MinimumWidth = 70;
+            paymentsGridColumn4.Name = "paymentsGridColumn4";
+            paymentsGridColumn4.ReadOnly = true;
+            paymentsGridColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentsGridColumn5
+            // 
+            paymentsGridColumn5.HeaderText = "Paid at";
+            paymentsGridColumn5.MinimumWidth = 70;
+            paymentsGridColumn5.Name = "paymentsGridColumn5";
+            paymentsGridColumn5.ReadOnly = true;
+            paymentsGridColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // notificationsPage
             // 
             notificationsPage.Controls.Add(notificationsHelp);
             notificationsPage.Controls.Add(messages);
-            notificationsPage.Location = new Point(4, 24);
+            notificationsPage.Location = new Point(4, 38);
             notificationsPage.Name = "notificationsPage";
-            notificationsPage.Size = new Size(1132, 537);
+            notificationsPage.Size = new Size(1132, 523);
             notificationsPage.TabIndex = 4;
-            notificationsPage.Text = "5. Notifications";
+            notificationsPage.Text = "Notifications";
             notificationsPage.UseVisualStyleBackColor = true;
             // 
             // notificationsHelp
@@ -683,10 +716,10 @@ namespace CampusLaundry.WinForms
             // 
             messages.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             messages.HorizontalScrollbar = true;
-            messages.ItemHeight = 17;
+            messages.ItemHeight = 23;
             messages.Location = new Point(16, 60);
             messages.Name = "messages";
-            messages.Size = new Size(1090, 429);
+            messages.Size = new Size(1090, 326);
             messages.TabIndex = 1;
             // 
             // clock
@@ -734,9 +767,9 @@ namespace CampusLaundry.WinForms
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.FromArgb(242, 247, 252);
             ClientSize = new Size(1184, 760);
             Controls.Add(backHomeButton);
             Controls.Add(headingLabel);
@@ -753,16 +786,16 @@ namespace CampusLaundry.WinForms
             FormClosed += MainFormClosed;
             Load += MainFormLoad;
             mainTabs.ResumeLayout(false);
-            studentsPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)studentsGrid).EndInit();
             bookingsPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)bookingsGrid).EndInit();
-            paymentsPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)paymentsGrid).EndInit();
             maintenancePage.ResumeLayout(false);
             maintenancePage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)machinesGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)ticketsGrid).EndInit();
+            studentsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)studentsGrid).EndInit();
+            paymentsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)paymentsGrid).EndInit();
             notificationsPage.ResumeLayout(false);
             ResumeLayout(false);
         }

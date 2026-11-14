@@ -73,4 +73,14 @@ public partial class StartForm : Form
         foreach (MainForm window in studentWindows.Values)
             if (!window.IsDisposed) window.Close();
     }
+
+    private void footerLabel_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void adminTitle_Click(object sender, EventArgs e)
+    {
+
+    }
 }

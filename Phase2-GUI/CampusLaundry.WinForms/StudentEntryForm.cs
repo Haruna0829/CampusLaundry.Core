@@ -50,4 +50,21 @@ public partial class StudentEntryForm : Form
     { HomeRequested?.Invoke(this, EventArgs.Empty); Close(); }
     private void EntryClosed(object? sender, FormClosedEventArgs e)
     { if (session != null) session.Changed -= SessionChanged; }
+
+    private void entryTabs_DrawItem(object sender, DrawItemEventArgs e)
+    {
+        var tabs = (TabControl)sender!;
+        var page = tabs.TabPages[e.Index];
+        bool selected = e.Index == tabs.SelectedIndex;
+        bool existing = page.Text == "Existing student";
+
+        Color back = selected ? ColorTranslator.FromHtml("#0200A8") : ColorTranslator.FromHtml("#287AD0");
+        Color fore = selected ? Color.White : ColorTranslator.FromHtml("#FFFFFF");
+
+        using (var brush = new SolidBrush(back))
+            e.Graphics.FillRectangle(brush, e.Bounds);
+
+        TextRenderer.DrawText(e.Graphics, page.Text, tabs.Font, e.Bounds, fore,
+            TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
+    }
 }

@@ -45,7 +45,7 @@ public partial class MainForm : Form
         studentsHelp.Text = "Registered students. New students register through the student view.";
         bookingsPage.Text = IsAdmin ? "All bookings" : "My bookings";
         paymentsPage.Text = IsAdmin ? "All payments" : "My payments";
-        maintenancePage.Text = IsAdmin ? "Machines & maintenance" : "Machine status";
+        maintenancePage.Text = IsAdmin ? "Machine Status" : "Machine status";
         notificationsPage.Text = "Updates";
         joinButton.Visible = !IsAdmin;
         payButton.Visible = !IsAdmin;
@@ -57,6 +57,9 @@ public partial class MainForm : Form
         if (!IsAdmin)
         {
             mainTabs.TabPages.Remove(studentsPage);
+            mainTabs.TabPages.Remove(maintenancePage);
+            mainTabs.TabPages.Insert(0, maintenancePage);
+            mainTabs.SelectedTab = maintenancePage;
             foreach (Control control in maintenancePage.Controls)
                 control.Visible = control == machinesGrid || control == machineHelp;
             machineHelp.Text = "Check which machines are available.";
@@ -234,6 +237,22 @@ public partial class MainForm : Form
     private void studentsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
 
+    }
+
+    private void mainTabs_DrawItem(object sender, DrawItemEventArgs e)
+    {
+        var tabs = (TabControl)sender!;
+        var page = tabs.TabPages[e.Index];
+        bool selected = e.Index == tabs.SelectedIndex;
+
+        Color back = selected ? ColorTranslator.FromHtml("#0200A8") : ColorTranslator.FromHtml("#287AD0");
+        Color fore = selected ? Color.White : ColorTranslator.FromHtml("#FFFFFF");
+
+        using (var brush = new SolidBrush(back))
+            e.Graphics.FillRectangle(brush, e.Bounds);
+
+        TextRenderer.DrawText(e.Graphics, page.Text, tabs.Font, e.Bounds, fore,
+            TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
     }
 
     private static void RefreshGrid<T>(DataGridView grid, IEnumerable<T> items, Func<T, object?[]> cells) where T : class
