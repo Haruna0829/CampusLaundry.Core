@@ -13,39 +13,47 @@ namespace CampusLaundry.WinForms
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            receiptText = new System.Windows.Forms.TextBox();
-            saveButton = new System.Windows.Forms.Button();
+            receiptText = new TextBox();
+            saveButton = new Button();
             SuspendLayout();
+            // 
+            // receiptText
+            // 
+            receiptText.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            receiptText.Font = new Font("Consolas", 11F);
+            receiptText.Location = new Point(16, 16);
+            receiptText.Multiline = true;
             receiptText.Name = "receiptText";
-            receiptText.Location = new System.Drawing.Point(16, 16);
-            receiptText.Size = new System.Drawing.Size(568, 340);
+            receiptText.ReadOnly = true;
+            receiptText.ScrollBars = ScrollBars.Both;
+            receiptText.Size = new Size(568, 340);
             receiptText.TabIndex = 0;
             receiptText.Text = "Your receipt will appear here.";
-            receiptText.Multiline = true;
-            receiptText.ReadOnly = true;
-            receiptText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            receiptText.Font = new System.Drawing.Font("Consolas", 11F);
-            receiptText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            // 
+            // saveButton
+            // 
+            saveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            saveButton.Location = new Point(16, 375);
             saveButton.Name = "saveButton";
-            saveButton.Location = new System.Drawing.Point(16, 375);
-            saveButton.Size = new System.Drawing.Size(220, 36);
+            saveButton.Size = new Size(220, 36);
             saveButton.TabIndex = 1;
             saveButton.Text = "Save receipt as text";
             saveButton.UseVisualStyleBackColor = true;
-            saveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-            this.Controls.Add(receiptText);
-            this.Controls.Add(saveButton);
             saveButton.Click += SaveClick;
-            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            ClientSize = new System.Drawing.Size(600, 430);
-            Font = new System.Drawing.Font("Segoe UI", 10F);
+            // 
+            // ReceiptForm
+            // 
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.FromArgb(242, 247, 252);
+            ClientSize = new Size(600, 430);
+            Controls.Add(receiptText);
+            Controls.Add(saveButton);
+            Font = new Font("Segoe UI", 10F);
+            MinimumSize = new Size(500, 400);
             Name = "ReceiptForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Receipt";
-            MinimumSize = new System.Drawing.Size(500, 400);
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             ResumeLayout(false);
             PerformLayout();
         }

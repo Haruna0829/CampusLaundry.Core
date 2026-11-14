@@ -13,74 +13,104 @@ namespace CampusLaundry.WinForms
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            bookingLabel = new System.Windows.Forms.Label();
-            amountLabel = new System.Windows.Forms.Label();
-            simulationLabel = new System.Windows.Forms.Label();
-            methodBox = new System.Windows.Forms.ComboBox();
-            failureBox = new System.Windows.Forms.CheckBox();
-            confirmButton = new System.Windows.Forms.Button();
-            backButton = new System.Windows.Forms.Button();
+            bookingLabel = new Label();
+            amountLabel = new Label();
+            simulationLabel = new Label();
+            methodBox = new ComboBox();
+            failureBox = new CheckBox();
+            confirmButton = new Button();
+            backButton = new Button();
             SuspendLayout();
+            // 
+            // bookingLabel
+            // 
+            bookingLabel.BackColor = Color.FromArgb(242, 247, 252);
+            bookingLabel.Location = new Point(20, 20);
             bookingLabel.Name = "bookingLabel";
-            bookingLabel.Location = new System.Drawing.Point(20, 20);
-            bookingLabel.Size = new System.Drawing.Size(460, 26);
+            bookingLabel.Size = new Size(460, 26);
             bookingLabel.TabIndex = 0;
             bookingLabel.Text = "Booking details";
+            // 
+            // amountLabel
+            // 
+            amountLabel.Location = new Point(20, 58);
             amountLabel.Name = "amountLabel";
-            amountLabel.Location = new System.Drawing.Point(20, 58);
-            amountLabel.Size = new System.Drawing.Size(460, 26);
+            amountLabel.Size = new Size(460, 26);
             amountLabel.TabIndex = 1;
             amountLabel.Text = "Amount: RM 5.00 | 30-minute wash";
+            // 
+            // simulationLabel
+            // 
+            simulationLabel.Location = new Point(20, 96);
             simulationLabel.Name = "simulationLabel";
-            simulationLabel.Location = new System.Drawing.Point(20, 96);
-            simulationLabel.Size = new System.Drawing.Size(460, 26);
+            simulationLabel.Size = new Size(460, 26);
             simulationLabel.TabIndex = 2;
             simulationLabel.Text = "Demo payment. No money will be charged.";
+            // 
+            // methodBox
+            // 
+            methodBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            methodBox.Location = new Point(20, 137);
             methodBox.Name = "methodBox";
-            methodBox.Location = new System.Drawing.Point(20, 137);
-            methodBox.Size = new System.Drawing.Size(270, 30);
+            methodBox.Size = new Size(270, 31);
             methodBox.TabIndex = 3;
-            methodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            // 
+            // failureBox
+            // 
+            failureBox.Location = new Point(20, 180);
             failureBox.Name = "failureBox";
-            failureBox.Location = new System.Drawing.Point(20, 180);
-            failureBox.Size = new System.Drawing.Size(350, 30);
+            failureBox.Size = new Size(350, 30);
             failureBox.TabIndex = 4;
             failureBox.Text = "Test a failed payment";
+            // 
+            // confirmButton
+            // 
+            confirmButton.BackColor = Color.FromArgb(40, 122, 208);
+            confirmButton.DialogResult = DialogResult.OK;
+            confirmButton.FlatStyle = FlatStyle.Flat;
+            confirmButton.ForeColor = Color.White;
+            confirmButton.Location = new Point(20, 235);
             confirmButton.Name = "confirmButton";
-            confirmButton.Location = new System.Drawing.Point(20, 235);
-            confirmButton.Size = new System.Drawing.Size(120, 36);
+            confirmButton.Size = new Size(120, 36);
             confirmButton.TabIndex = 5;
             confirmButton.Text = "Confirm";
-            confirmButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            confirmButton.UseVisualStyleBackColor = false;
+            // 
+            // backButton
+            // 
+            backButton.BackColor = Color.FromArgb(40, 122, 208);
+            backButton.DialogResult = DialogResult.Cancel;
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.ForeColor = Color.White;
+            backButton.Location = new Point(155, 235);
             backButton.Name = "backButton";
-            backButton.Location = new System.Drawing.Point(155, 235);
-            backButton.Size = new System.Drawing.Size(120, 36);
+            backButton.Size = new Size(120, 36);
             backButton.TabIndex = 6;
             backButton.Text = "Back";
-            backButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Controls.Add(bookingLabel);
-            this.Controls.Add(amountLabel);
-            this.Controls.Add(simulationLabel);
-            this.Controls.Add(methodBox);
-            this.Controls.Add(failureBox);
-            this.Controls.Add(confirmButton);
-            this.Controls.Add(backButton);
-            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            ClientSize = new System.Drawing.Size(500, 300);
-            Font = new System.Drawing.Font("Segoe UI", 10F);
-            Name = "PaymentForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Demo payment";
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            backButton.UseVisualStyleBackColor = false;
+            // 
+            // PaymentForm
+            // 
+            AcceptButton = confirmButton;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            CancelButton = backButton;
+            ClientSize = new Size(500, 300);
+            Controls.Add(bookingLabel);
+            Controls.Add(amountLabel);
+            Controls.Add(simulationLabel);
+            Controls.Add(methodBox);
+            Controls.Add(failureBox);
+            Controls.Add(confirmButton);
+            Controls.Add(backButton);
+            Font = new Font("Segoe UI", 10F);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            AcceptButton = confirmButton;
-            CancelButton = backButton;
+            Name = "PaymentForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Demo payment";
             ResumeLayout(false);
-            PerformLayout();
         }
         #endregion
 

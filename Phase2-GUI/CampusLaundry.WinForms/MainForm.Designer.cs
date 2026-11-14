@@ -341,12 +341,15 @@ namespace CampusLaundry.WinForms
             // 
             // reportButton
             // 
+            reportButton.BackColor = Color.FromArgb(40, 122, 208);
+            reportButton.FlatStyle = FlatStyle.Flat;
+            reportButton.ForeColor = Color.White;
             reportButton.Location = new Point(550, 8);
             reportButton.Name = "reportButton";
             reportButton.Size = new Size(150, 36);
             reportButton.TabIndex = 2;
             reportButton.Text = "Report fault";
-            reportButton.UseVisualStyleBackColor = true;
+            reportButton.UseVisualStyleBackColor = false;
             reportButton.Click += ReportClick;
             // 
             // machineHelp
@@ -420,29 +423,38 @@ namespace CampusLaundry.WinForms
             // 
             // assignButton
             // 
+            assignButton.BackColor = Color.FromArgb(40, 122, 208);
+            assignButton.FlatStyle = FlatStyle.Flat;
+            assignButton.ForeColor = Color.White;
             assignButton.Location = new Point(240, 251);
             assignButton.Name = "assignButton";
             assignButton.Size = new Size(165, 36);
             assignButton.TabIndex = 6;
             assignButton.Text = "Assign technician";
-            assignButton.UseVisualStyleBackColor = true;
+            assignButton.UseVisualStyleBackColor = false;
             assignButton.Click += AssignClick;
             // 
             // repairButton
             // 
+            repairButton.BackColor = Color.FromArgb(40, 122, 208);
+            repairButton.FlatStyle = FlatStyle.Flat;
+            repairButton.ForeColor = Color.White;
             repairButton.Location = new Point(420, 251);
             repairButton.Name = "repairButton";
             repairButton.Size = new Size(140, 36);
             repairButton.TabIndex = 7;
             repairButton.Text = "Start repair";
-            repairButton.UseVisualStyleBackColor = true;
+            repairButton.UseVisualStyleBackColor = false;
             repairButton.Click += RepairClick;
             // 
             // notesLabel
             // 
-            notesLabel.Location = new Point(580, 258);
+            notesLabel.BackColor = Color.Transparent;
+            notesLabel.FlatStyle = FlatStyle.Flat;
+            notesLabel.ForeColor = Color.Black;
+            notesLabel.Location = new Point(595, 260);
             notesLabel.Name = "notesLabel";
-            notesLabel.Size = new Size(100, 26);
+            notesLabel.Size = new Size(79, 26);
             notesLabel.TabIndex = 8;
             notesLabel.Text = "Repair notes";
             // 
@@ -456,12 +468,15 @@ namespace CampusLaundry.WinForms
             // 
             // resolveButton
             // 
+            resolveButton.BackColor = Color.FromArgb(40, 122, 208);
+            resolveButton.FlatStyle = FlatStyle.Flat;
+            resolveButton.ForeColor = Color.White;
             resolveButton.Location = new Point(945, 251);
             resolveButton.Name = "resolveButton";
             resolveButton.Size = new Size(160, 36);
             resolveButton.TabIndex = 10;
             resolveButton.Text = "Resolve ticket";
-            resolveButton.UseVisualStyleBackColor = true;
+            resolveButton.UseVisualStyleBackColor = false;
             resolveButton.Click += ResolveClick;
             // 
             // ticketsGrid
