@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../CampusLaundry.Core/CampusLaundry.Core.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../CampusLaundry.WinForms/AppSession.cs" Link="AppSession.cs" />
+    <Compile Include="../CampusLaundry.WinForms/FormNotificationService.cs" Link="FormNotificationService.cs" />
+  </ItemGroup>
+</Project>

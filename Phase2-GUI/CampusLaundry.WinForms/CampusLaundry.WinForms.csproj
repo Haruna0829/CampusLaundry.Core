@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms><EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\CampusLaundry.Core\CampusLaundry.Core.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Compile Update="StudentEntryForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="StudentEntryForm.Designer.cs"><DependentUpon>StudentEntryForm.cs</DependentUpon></Compile>
+    <Compile Update="StartForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="StartForm.Designer.cs"><DependentUpon>StartForm.cs</DependentUpon></Compile>
+    <Compile Update="MainForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="MainForm.Designer.cs"><DependentUpon>MainForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="MainForm.resx"><DependentUpon>MainForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="PaymentForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="PaymentForm.Designer.cs"><DependentUpon>PaymentForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="PaymentForm.resx"><DependentUpon>PaymentForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="ReceiptForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="ReceiptForm.Designer.cs"><DependentUpon>ReceiptForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="ReceiptForm.resx"><DependentUpon>ReceiptForm.cs</DependentUpon></EmbeddedResource>
+  </ItemGroup>
+</Project>
