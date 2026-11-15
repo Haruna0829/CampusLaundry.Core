@@ -7,6 +7,7 @@ public partial class PaymentForm : Form
 {
     [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public PaymentMethod SelectedMethod => (PaymentMethod)methodBox.SelectedItem!;
+
     [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public bool SimulateFailure => failureBox.Checked;
 

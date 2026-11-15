@@ -109,6 +109,7 @@ public partial class MainForm : Form
         Booking b = room.JoinQueue(s, Now);
         RefreshScreen(); SelectRow(bookingsGrid, b);
     });
+
     private void PayClick(object? sender, EventArgs e) => RunAction(() =>
     {
         Booking b = SelectedBooking();
@@ -118,13 +119,16 @@ public partial class MainForm : Form
         session.Refresh();
         MessageBox.Show(this, paid ? "Payment successful. Click Start wash when ready." : "Payment failed. Try again before your reservation expires.", "Payment result");
     });
+
     private void StartClick(object? sender, EventArgs e) => RunAction(() => room.StartWash(SelectedBooking(), Now));
+
     private void CancelClick(object? sender, EventArgs e) => RunAction(() =>
     {
         Booking b = SelectedBooking();
         if (MessageBox.Show(this, "Cancel booking " + b.BookingID + "? Any paid reservation will be refunded.", "Confirm cancellation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             room.Cancel(b, Now);
     });
+
     private void ReceiptClick(object? sender, EventArgs e) => RunAction(() =>
     {
         Payment p = Selected<Payment>(paymentsGrid);
@@ -133,17 +137,22 @@ public partial class MainForm : Form
         if (receipt == null) throw new InvalidOperationException("This payment has no receipt.");
         using var form = new ReceiptForm(receipt); form.ShowDialog(this);
     });
+
     private void ReportClick(object? sender, EventArgs e) => RunAction(() =>
     { RequireAdmin(); room.ReportFault(Selected<WashingMachine>(machinesGrid), issueBox.Text, Now); issueBox.Clear(); });
+
     private void AssignClick(object? sender, EventArgs e) => RunAction(() =>
     {
         RequireAdmin();
         if (technicianBox.SelectedItem is not Technician t) throw new InvalidOperationException("Select a technician.");
         room.AssignTicket(Selected<MaintenanceTicket>(ticketsGrid), t);
     });
+
     private void RepairClick(object? sender, EventArgs e) => RunAction(() => { RequireAdmin(); room.StartRepair(Selected<MaintenanceTicket>(ticketsGrid)); });
+
     private void ResolveClick(object? sender, EventArgs e) => RunAction(() =>
     { RequireAdmin(); room.ResolveTicket(Selected<MaintenanceTicket>(ticketsGrid), notesBox.Text, Now); notesBox.Clear(); });
+
     private void AdvanceClick(object? sender, EventArgs e) => RunAction(() =>
     { RequireAdmin(); session.AdvanceTime(); });
 
@@ -154,8 +163,10 @@ public partial class MainForm : Form
         { MessageBox.Show(this, ex.Message, "Please check", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         finally { session.Refresh(); }
     }
+
     private void ReloadStudents()
     { studentBox.DataSource = IsAdmin ? room.Students.ToList() : new List<Student> { activeStudent! }; }
+
     private void RefreshScreen()
     {
         refreshing = true;
@@ -203,6 +214,7 @@ public partial class MainForm : Form
         }
         refreshing = false; UpdateButtons();
     }
+
     private void UpdateButtons()
     {
         joinButton.Enabled = activeStudent != null && !room.Bookings.Any(b => b.Student == activeStudent && b.IsActive);
@@ -219,15 +231,20 @@ public partial class MainForm : Form
         repairButton.Enabled = ticket?.Status == TicketStatus.Assigned;
         resolveButton.Enabled = ticket?.Status == TicketStatus.InProgress;
     }
+
     private static string StatusText(BookingStatus status) => status switch
     {
         BookingStatus.AwaitingPayment => "Reserved",
         BookingStatus.InProgress => "Washing",
         _ => status.ToString()
     };
+
     private static string FormatTime(DateTime? time) => time?.ToString("HH:mm:ss") ?? "—";
+
     private static T? Current<T>(DataGridView grid) where T : class => grid.CurrentRow?.Tag as T;
+
     private static T Selected<T>(DataGridView grid) where T : class => Current<T>(grid) ?? throw new InvalidOperationException("Select a row first.");
+
     private static void SelectRow(DataGridView grid, object item)
     {
         foreach (DataGridViewRow row in grid.Rows)
@@ -236,7 +253,6 @@ public partial class MainForm : Form
 
     private void studentsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-
     }
 
     private void mainTabs_DrawItem(object sender, DrawItemEventArgs e)

@@ -10,7 +10,8 @@ public partial class StartForm : Form
     private StudentEntryForm? studentEntry;
     private readonly Dictionary<Student, MainForm> studentWindows = new();
 
-    public StartForm() { InitializeComponent(); }
+    public StartForm()
+    { InitializeComponent(); }
 
     private void StartFormLoad(object? sender, EventArgs e)
     {
@@ -76,11 +77,9 @@ public partial class StartForm : Form
 
     private void footerLabel_Click(object sender, EventArgs e)
     {
-
     }
 
     private void adminTitle_Click(object sender, EventArgs e)
     {
-
     }
 }

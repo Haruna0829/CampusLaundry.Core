@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace CampusLaundry.Core;
 
 // This class coordinates changes so a form cannot accidentally double-book a machine.
@@ -26,6 +22,7 @@ public class LaundryRoom
     public IReadOnlyList<Receipt> Receipts => receipts.AsReadOnly();
     public IReadOnlyList<MaintenanceTicket> Tickets => tickets.AsReadOnly();
     public IReadOnlyList<Technician> Technicians => technicians.AsReadOnly();
+
     public LaundryRoom(INotificationService service)
     {
         notifier = service ?? throw new ArgumentNullException(nameof(service));
@@ -33,12 +30,14 @@ public class LaundryRoom
         technicians.Add(new Technician("T001", "Ahmad", "0123456792"));
         technicians.Add(new Technician("T002", "Siti", "0123456793"));
     }
+
     public Student AddStudent(string id, string name, string phone)
     {
         Student student = new(id, name, phone);
         if (students.Any(s => s.StudID == student.StudID)) throw new InvalidOperationException("This student ID already exists.");
         students.Add(student); return student;
     }
+
     public Booking JoinQueue(Student student, DateTime now)
     {
         Ticker(now);
@@ -49,6 +48,7 @@ public class LaundryRoom
         notifier.Notify(student, "Joined the laundry queue. Booking " + b.BookingID + ".");
         AssignMachines(now); return b;
     }
+
     public bool Pay(Booking b, PaymentMethod method, bool simulateFailure, DateTime now)
     {
         Ticker(now); CheckBooking(b);
@@ -63,6 +63,7 @@ public class LaundryRoom
         notifier.Notify(b.Student, "Payment successful. Start your wash before the reservation expires.");
         return true;
     }
+
     public void StartWash(Booking b, DateTime now)
     {
         Ticker(now); CheckBooking(b);
@@ -73,6 +74,7 @@ public class LaundryRoom
         m.WashingMachineStatus = MachineStatus.InUse; m.EndsAt = now.AddMinutes(CycleMinutes);
         notifier.Notify(b.Student, "Wash started on machine " + m.MachineID + ".");
     }
+
     public void Cancel(Booking b, DateTime now)
     {
         Ticker(now); CheckBooking(b);
@@ -80,6 +82,7 @@ public class LaundryRoom
             throw new InvalidOperationException("Only waiting or reserved bookings can be cancelled.");
         CancelBooking(b, "Booking cancelled."); AssignMachines(now);
     }
+
     private void CancelBooking(Booking b, string reason)
     {
         Queue.Remove(b);
@@ -89,6 +92,7 @@ public class LaundryRoom
         b.ReservationExpiresAt = null; b.BookingStatus = BookingStatus.Cancelled;
         notifier.Notify(b.Student, reason);
     }
+
     public void Ticker(DateTime now)
     {
         foreach (Booking b in bookings.Where(b => b.BookingStatus == BookingStatus.AwaitingPayment && b.ReservationExpiresAt <= now).ToList())
@@ -100,6 +104,7 @@ public class LaundryRoom
         }
         AssignMachines(now);
     }
+
     private void AssignMachines(DateTime now)
     {
         foreach (WashingMachine m in machines.Where(m => m.WashingMachineStatus == MachineStatus.Available))
@@ -111,10 +116,13 @@ public class LaundryRoom
             notifier.Notify(b.Student, "Machine " + m.MachineID + " reserved. Pay and start within five minutes.");
         }
     }
+
     private void Release(WashingMachine m)
     { m.CurrentBooking = null; m.EndsAt = null; m.WashingMachineStatus = MachineStatus.Available; }
+
     private void CheckBooking(Booking b)
     { if (!bookings.Contains(b)) throw new InvalidOperationException("Booking does not belong to this room."); }
+
     public MaintenanceTicket ReportFault(WashingMachine m, string issue, DateTime now)
     {
         Ticker(now);
@@ -124,18 +132,21 @@ public class LaundryRoom
         m.WashingMachineStatus = MachineStatus.OutOfOrder;
         MaintenanceTicket ticket = new(tickets.Count + 1, m, issue.Trim(), now); tickets.Add(ticket); return ticket;
     }
+
     public void AssignTicket(MaintenanceTicket ticket, Technician technician)
     {
         if (!tickets.Contains(ticket) || !technicians.Contains(technician) || ticket.Status != TicketStatus.Open || !technician.IsAvailable)
             throw new InvalidOperationException("Select an open ticket and an available technician.");
         ticket.AssignedTo = technician; technician.IsAvailable = false; ticket.Status = TicketStatus.Assigned;
     }
+
     public void StartRepair(MaintenanceTicket ticket)
     {
         if (!tickets.Contains(ticket) || ticket.Status != TicketStatus.Assigned)
             throw new InvalidOperationException("Assign a technician first.");
         ticket.Status = TicketStatus.InProgress;
     }
+
     public void ResolveTicket(MaintenanceTicket ticket, string notes, DateTime now)
     {
         if (!tickets.Contains(ticket) || ticket.Status != TicketStatus.InProgress)

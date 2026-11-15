@@ -9,6 +9,7 @@ public class AppSession
     public LaundryRoom Room { get; }
     private TimeSpan offset;
     public DateTime Now => DateTime.Now.Add(offset);
+
     public event EventHandler? Changed;
 
     public AppSession()

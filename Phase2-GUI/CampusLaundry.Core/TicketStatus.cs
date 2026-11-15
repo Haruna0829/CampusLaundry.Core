@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace CampusLaundry.Core;
 
-public enum TicketStatus { Open, Assigned, InProgress, Resolved }
+public enum TicketStatus
+{ Open, Assigned, InProgress, Resolved }

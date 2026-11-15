@@ -1,8 +1,9 @@
 namespace CampusLaundry.WinForms;
+
 internal static class Program
 {
     [STAThread]
-    static void Main()
+    private static void Main()
     {
         ApplicationConfiguration.Initialize();
         Application.Run(new StartForm());

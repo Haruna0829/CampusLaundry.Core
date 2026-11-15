@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace CampusLaundry.Core;
 
 public class MaintenanceTicket
@@ -14,6 +10,7 @@ public class MaintenanceTicket
     public DateTime ReportedAt { get; }
     public DateTime? ResolvedAt { get; internal set; }
     public string ResolutionNotes { get; internal set; } = "";
+
     internal MaintenanceTicket(int id, WashingMachine machine, string issue, DateTime now)
     { TicketID = id; Machine = machine; IssueDescription = issue; ReportedAt = now; }
 }

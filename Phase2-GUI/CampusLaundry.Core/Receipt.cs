@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace CampusLaundry.Core;
 
 public class Receipt
@@ -11,11 +7,13 @@ public class Receipt
     public Student IssuedTo { get; }
     public int MachineID { get; }
     public DateTime IssuedAt { get; }
+
     internal Receipt(Payment payment, Booking booking, DateTime now)
     {
         Payment = payment; IssuedTo = booking.Student;
         MachineID = booking.AssignedMachine!.MachineID; IssuedAt = now;
     }
+
     public string Print() =>
         "CAMPUS LAUNDRY - DEMO RECEIPT" + Environment.NewLine +
         "Receipt: " + ReceiptNo + Environment.NewLine +

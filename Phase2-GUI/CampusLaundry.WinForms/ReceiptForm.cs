@@ -5,16 +5,19 @@ namespace CampusLaundry.WinForms;
 public partial class ReceiptForm : Form
 {
     private string receiptNumber = "Receipt";
+
     public ReceiptForm()
     {
         InitializeComponent();
     }
+
     public ReceiptForm(Receipt receipt) : this()
     {
         receiptNumber = receipt.ReceiptNo;
         Text = "Receipt " + receiptNumber;
         receiptText.Text = receipt.Print();
     }
+
     private void SaveClick(object? sender, EventArgs e)
     {
         using var dialog = new SaveFileDialog { Filter = "Text files (*.txt)|*.txt", FileName = receiptNumber + ".txt" };
